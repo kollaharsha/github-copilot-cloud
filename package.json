@@ -1,0 +1,19 @@
+{
+  "name": "github-copilot-cloud",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "GitHub Copilot custom agents and MCP knowledge base integration for AWS CDK TypeScript on AWS.",
+  "scripts": {
+    "mcp:platform-kb": "node scripts/mcp/platform-knowledge-server.mjs",
+    "test": "node --test",
+    "validate:agents": "node scripts/validate-agents.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.5",
+    "zod": "^3.25.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "mcpServers": {
+    "platform-knowledge": {
+      "type": "local",
+      "command": "node",
+      "args": ["scripts/mcp/platform-knowledge-server.mjs"],
+      "tools": [
+        "list_configured_sources",
+        "search_enghub",
+        "get_enghub_doc",
+        "search_gitlab",
+        "get_gitlab_file",
+        "search_confluence",
+        "get_confluence_page",
+        "aws_cli_read",
+        "list_cloudability_views",
+        "list_cloudability_cost_reports",
+        "cloudability_request"
+      ],
+      "env": {
+        "PLATFORM_KB_CONFIG_PATH": "config/knowledge-sources.json",
+        "ENGHUB_API_TOKEN": "COPILOT_MCP_ENGHUB_API_TOKEN",
+        "ENGHUB_AUTH_HEADER": "COPILOT_MCP_ENGHUB_AUTH_HEADER",
+        "ENGHUB_AUTH_SCHEME": "COPILOT_MCP_ENGHUB_AUTH_SCHEME",
+        "GITLAB_TOKEN": "COPILOT_MCP_GITLAB_TOKEN",
+        "GITLAB_AUTH_TYPE": "COPILOT_MCP_GITLAB_AUTH_TYPE",
+        "CONFLUENCE_USERNAME": "COPILOT_MCP_CONFLUENCE_USERNAME",
+        "CONFLUENCE_API_TOKEN": "COPILOT_MCP_CONFLUENCE_API_TOKEN",
+        "CLOUDABILITY_API_TOKEN": "COPILOT_MCP_CLOUDABILITY_API_TOKEN",
+        "AWS_ACCESS_KEY_ID": "COPILOT_MCP_AWS_ACCESS_KEY_ID",
+        "AWS_SECRET_ACCESS_KEY": "COPILOT_MCP_AWS_SECRET_ACCESS_KEY",
+        "AWS_SESSION_TOKEN": "COPILOT_MCP_AWS_SESSION_TOKEN",
+        "AWS_REGION": "COPILOT_MCP_AWS_REGION"
+      }
+    }
+  }
+}

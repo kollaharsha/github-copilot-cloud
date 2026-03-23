@@ -1,0 +1,48 @@
+name: "Copilot Setup Steps"
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+      - package.json
+      - package-lock.json
+      - scripts/mcp/**
+  pull_request:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+      - package.json
+      - package-lock.json
+      - scripts/mcp/**
+
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install JavaScript dependencies
+        run: npm ci
+
+      - name: Ensure AWS CLI is available
+        run: |
+          if ! command -v aws >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y awscli
+          fi
+
+      - name: Show tool versions
+        run: |
+          node --version
+          npm --version
+          aws --version

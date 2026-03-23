@@ -1,0 +1,73 @@
+{
+  "enghub": {
+    "baseUrl": "https://enghub.internal.example.com",
+    "searchUrl": "https://enghub.internal.example.com/api/search",
+    "searchQueryParam": "q",
+    "allowedPathPrefixes": [
+      "/platform",
+      "/engineering/aws",
+      "/developer-experience"
+    ],
+    "defaultHeaders": {
+      "Accept": "application/json"
+    }
+  },
+  "gitlab": {
+    "baseUrl": "https://gitlab.example.com",
+    "projects": [
+      {
+        "alias": "cdk-platform",
+        "id": "platform/aws/cdk-platform",
+        "defaultRef": "main"
+      },
+      {
+        "alias": "construct-library",
+        "id": "platform/aws/cdk-construct-library",
+        "defaultRef": "main"
+      },
+      {
+        "alias": "policies",
+        "id": "platform/security/policies-as-code",
+        "defaultRef": "main"
+      }
+    ]
+  },
+  "confluence": {
+    "baseUrl": "https://company.atlassian.net/wiki",
+    "allowedSpaceKeys": [
+      "PLAT",
+      "ARCH",
+      "SEC"
+    ]
+  },
+  "aws": {
+    "defaultRegion": "us-east-1",
+    "allowedServices": [
+      "sts",
+      "organizations",
+      "cloudformation",
+      "service-quotas",
+      "ec2",
+      "lambda",
+      "dynamodb",
+      "events",
+      "iam",
+      "logs",
+      "cloudwatch"
+    ],
+    "blockedServices": [
+      "secretsmanager",
+      "kms",
+      "ssm"
+    ]
+  },
+  "cloudability": {
+    "baseUrl": "https://api.cloudability.com",
+    "defaultViewId": "0",
+    "allowedPaths": [
+      "/v3/views",
+      "/v3/reporting",
+      "/rightsizing"
+    ]
+  }
+}
